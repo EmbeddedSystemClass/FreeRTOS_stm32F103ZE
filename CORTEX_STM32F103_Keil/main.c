@@ -175,19 +175,22 @@ QueueHandle_t xLCDQueue;
 void USART_Configuration(void);
 xComPortHandle xSerialPortInitMinimal( unsigned long ulWantedBaud, unsigned portBASE_TYPE uxQueueLength );
 
+#define MAX_CMD_LINE    1024
+extern void vUARTCommandConsoleStart( uint16_t usStackSize, UBaseType_t uxPriority );
+
 int main( void )
 {
 #ifdef DEBUG
   debug();
 #endif
 
-    prvSetupHardware();
+//    prvSetupHardware();
 
-//  USART_Configuration();
-    xSerialPortInitMinimal(mainCOM_TEST_BAUD_RATE, 1024);
-    xTaskCreate( vComRxTask, "COMRx", comSTACK_SIZE, NULL, mainCOM_TEST_PRIORITY, ( TaskHandle_t * ) NULL );
-
-  printf("\r\n****************************************************************\r\n");
+////  USART_Configuration();
+//    xSerialPortInitMinimal(mainCOM_TEST_BAUD_RATE, 1024);
+//    xTaskCreate( vComRxTask, "COMRx", comSTACK_SIZE, NULL, mainCOM_TEST_PRIORITY, ( TaskHandle_t * ) NULL );
+            vUARTCommandConsoleStart(MAX_CMD_LINE, mainCOM_TEST_PRIORITY);
+//        printf("\r\n****************************************************************\r\n");
 
     /* Create the queue used by the LCD task.  Messages for display on the LCD
     are received via this queue. */

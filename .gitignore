@@ -10,6 +10,9 @@
 *.dep
 *.lst
 *.map
+*.txt
+*.hex
+*.lnk
 *.htm
 *.rui_huang
 *.uvopt
@@ -22,3 +25,5 @@
 *.uvoptx
 *.inc
 *.include
+
+bin/
