@@ -137,11 +137,12 @@ xComPortHandle xPort;
         if( xSemaphoreTake( xTxMutex, cmdMAX_MUTEX_WAIT ) == pdPASS )
         {
             /* Echo the character back. */
-            xSerialPutChar( xPort, cRxedChar, portMAX_DELAY );
+            //xSerialPutChar( xPort, cRxedChar, portMAX_DELAY );
 
             /* Was it the end of the line? */
             if( cRxedChar == '\n' || cRxedChar == '\r' )
             {
+                                xSerialPutChar( xPort, cRxedChar, portMAX_DELAY );
                 /* Just to space the output from the input. */
                 vSerialPutString( xPort, ( signed char * ) pcNewLine, ( unsigned short ) strlen( pcNewLine ) );
 
@@ -181,6 +182,7 @@ xComPortHandle xPort;
             {
                 if( cRxedChar == '\r' )
                 {
+                                        xSerialPutChar( xPort, cRxedChar, portMAX_DELAY );
                     /* Ignore the character. */
                 }
                 else if( ( cRxedChar == '\b' ) || ( cRxedChar == cmdASCII_DEL ) )
@@ -192,9 +194,15 @@ xComPortHandle xPort;
                         ucInputIndex--;
                         cInputString[ ucInputIndex ] = '\0';
                     }
+
+                                        // Backspace is 0x7F in teraterm, so use \b instead
+                                        xSerialPutChar( xPort, '\b', portMAX_DELAY );
+                                        xSerialPutChar( xPort, ' ', portMAX_DELAY );
+                                        xSerialPutChar( xPort, '\b', portMAX_DELAY );
                 }
                 else
                 {
+                                        xSerialPutChar( xPort, cRxedChar, portMAX_DELAY );
                     /* A character was entered.  Add it to the string entered so
                     far.  When a \n is entered the complete    string will be
                     passed to the command interpreter. */
