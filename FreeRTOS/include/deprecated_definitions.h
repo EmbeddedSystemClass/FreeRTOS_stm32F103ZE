@@ -39,12 +39,12 @@ definitions below remain in the code for backward compatibility only.  New
 projects should not use them. */
 
 #ifdef OPEN_WATCOM_INDUSTRIAL_PC_PORT
-	#include "..\..\Source\portable\owatcom\16bitdos\pc\portmacro.h"
+	#include "..\..\FreeRTOS\portable\owatcom\16bitdos\pc\portmacro.h"
 	typedef void ( __interrupt __far *pxISR )();
 #endif
 
 #ifdef OPEN_WATCOM_FLASH_LITE_186_PORT
-	#include "..\..\Source\portable\owatcom\16bitdos\flsh186\portmacro.h"
+	#include "..\..\FreeRTOS\portable\owatcom\16bitdos\flsh186\portmacro.h"
 	typedef void ( __interrupt __far *pxISR )();
 #endif
 
@@ -57,19 +57,19 @@ projects should not use them. */
 #endif
 
 #ifdef MPLAB_PIC24_PORT
-	#include "../../Source/portable/MPLAB/PIC24_dsPIC/portmacro.h"
+	#include "../../FreeRTOS/portable/MPLAB/PIC24_dsPIC/portmacro.h"
 #endif
 
 #ifdef MPLAB_DSPIC_PORT
-	#include "../../Source/portable/MPLAB/PIC24_dsPIC/portmacro.h"
+	#include "../../FreeRTOS/portable/MPLAB/PIC24_dsPIC/portmacro.h"
 #endif
 
 #ifdef MPLAB_PIC18F_PORT
-	#include "../../Source/portable/MPLAB/PIC18F/portmacro.h"
+	#include "../../FreeRTOS/portable/MPLAB/PIC18F/portmacro.h"
 #endif
 
 #ifdef MPLAB_PIC32MX_PORT
-	#include "../../Source/portable/MPLAB/PIC32MX/portmacro.h"
+	#include "../../FreeRTOS/portable/MPLAB/PIC32MX/portmacro.h"
 #endif
 
 #ifdef _FEDPICC
@@ -77,11 +77,11 @@ projects should not use them. */
 #endif
 
 #ifdef SDCC_CYGNAL
-	#include "../../Source/portable/SDCC/Cygnal/portmacro.h"
+	#include "../../FreeRTOS/portable/SDCC/Cygnal/portmacro.h"
 #endif
 
 #ifdef GCC_ARM7
-	#include "../../Source/portable/GCC/ARM7_LPC2000/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/ARM7_LPC2000/portmacro.h"
 #endif
 
 #ifdef GCC_ARM7_ECLIPSE
@@ -89,123 +89,123 @@ projects should not use them. */
 #endif
 
 #ifdef ROWLEY_LPC23xx
-	#include "../../Source/portable/GCC/ARM7_LPC23xx/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/ARM7_LPC23xx/portmacro.h"
 #endif
 
 #ifdef IAR_MSP430
-	#include "..\..\Source\portable\IAR\MSP430\portmacro.h"
+	#include "..\..\FreeRTOS\portable\IAR\MSP430\portmacro.h"
 #endif
 
 #ifdef GCC_MSP430
-	#include "../../Source/portable/GCC/MSP430F449/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/MSP430F449/portmacro.h"
 #endif
 
 #ifdef ROWLEY_MSP430
-	#include "../../Source/portable/Rowley/MSP430F449/portmacro.h"
+	#include "../../FreeRTOS/portable/Rowley/MSP430F449/portmacro.h"
 #endif
 
 #ifdef ARM7_LPC21xx_KEIL_RVDS
-	#include "..\..\Source\portable\RVDS\ARM7_LPC21xx\portmacro.h"
+	#include "..\..\FreeRTOS\portable\RVDS\ARM7_LPC21xx\portmacro.h"
 #endif
 
 #ifdef SAM7_GCC
-	#include "../../Source/portable/GCC/ARM7_AT91SAM7S/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/ARM7_AT91SAM7S/portmacro.h"
 #endif
 
 #ifdef SAM7_IAR
-	#include "..\..\Source\portable\IAR\AtmelSAM7S64\portmacro.h"
+	#include "..\..\FreeRTOS\portable\IAR\AtmelSAM7S64\portmacro.h"
 #endif
 
 #ifdef SAM9XE_IAR
-	#include "..\..\Source\portable\IAR\AtmelSAM9XE\portmacro.h"
+	#include "..\..\FreeRTOS\portable\IAR\AtmelSAM9XE\portmacro.h"
 #endif
 
 #ifdef LPC2000_IAR
-	#include "..\..\Source\portable\IAR\LPC2000\portmacro.h"
+	#include "..\..\FreeRTOS\portable\IAR\LPC2000\portmacro.h"
 #endif
 
 #ifdef STR71X_IAR
-	#include "..\..\Source\portable\IAR\STR71x\portmacro.h"
+	#include "..\..\FreeRTOS\portable\IAR\STR71x\portmacro.h"
 #endif
 
 #ifdef STR75X_IAR
-	#include "..\..\Source\portable\IAR\STR75x\portmacro.h"
+	#include "..\..\FreeRTOS\portable\IAR\STR75x\portmacro.h"
 #endif
 
 #ifdef STR75X_GCC
-	#include "..\..\Source\portable\GCC\STR75x\portmacro.h"
+	#include "..\..\FreeRTOS\portable\GCC\STR75x\portmacro.h"
 #endif
 
 #ifdef STR91X_IAR
-	#include "..\..\Source\portable\IAR\STR91x\portmacro.h"
+	#include "..\..\FreeRTOS\portable\IAR\STR91x\portmacro.h"
 #endif
 
 #ifdef GCC_H8S
-	#include "../../Source/portable/GCC/H8S2329/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/H8S2329/portmacro.h"
 #endif
 
 #ifdef GCC_AT91FR40008
-	#include "../../Source/portable/GCC/ARM7_AT91FR40008/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/ARM7_AT91FR40008/portmacro.h"
 #endif
 
 #ifdef RVDS_ARMCM3_LM3S102
-	#include "../../Source/portable/RVDS/ARM_CM3/portmacro.h"
+	#include "../../FreeRTOS/portable/RVDS/ARM_CM3/portmacro.h"
 #endif
 
 #ifdef GCC_ARMCM3_LM3S102
-	#include "../../Source/portable/GCC/ARM_CM3/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/ARM_CM3/portmacro.h"
 #endif
 
 #ifdef GCC_ARMCM3
-	#include "../../Source/portable/GCC/ARM_CM3/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/ARM_CM3/portmacro.h"
 #endif
 
 #ifdef IAR_ARM_CM3
-	#include "../../Source/portable/IAR/ARM_CM3/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/ARM_CM3/portmacro.h"
 #endif
 
 #ifdef IAR_ARMCM3_LM
-	#include "../../Source/portable/IAR/ARM_CM3/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/ARM_CM3/portmacro.h"
 #endif
 
 #ifdef HCS12_CODE_WARRIOR
-	#include "../../Source/portable/CodeWarrior/HCS12/portmacro.h"
+	#include "../../FreeRTOS/portable/CodeWarrior/HCS12/portmacro.h"
 #endif
 
 #ifdef MICROBLAZE_GCC
-	#include "../../Source/portable/GCC/MicroBlaze/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/MicroBlaze/portmacro.h"
 #endif
 
 #ifdef TERN_EE
-	#include "..\..\Source\portable\Paradigm\Tern_EE\small\portmacro.h"
+	#include "..\..\FreeRTOS\portable\Paradigm\Tern_EE\small\portmacro.h"
 #endif
 
 #ifdef GCC_HCS12
-	#include "../../Source/portable/GCC/HCS12/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/HCS12/portmacro.h"
 #endif
 
 #ifdef GCC_MCF5235
-    #include "../../Source/portable/GCC/MCF5235/portmacro.h"
+    #include "../../FreeRTOS/portable/GCC/MCF5235/portmacro.h"
 #endif
 
 #ifdef COLDFIRE_V2_GCC
-	#include "../../../Source/portable/GCC/ColdFire_V2/portmacro.h"
+	#include "../../../FreeRTOS/portable/GCC/ColdFire_V2/portmacro.h"
 #endif
 
 #ifdef COLDFIRE_V2_CODEWARRIOR
-	#include "../../Source/portable/CodeWarrior/ColdFire_V2/portmacro.h"
+	#include "../../FreeRTOS/portable/CodeWarrior/ColdFire_V2/portmacro.h"
 #endif
 
 #ifdef GCC_PPC405
-	#include "../../Source/portable/GCC/PPC405_Xilinx/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/PPC405_Xilinx/portmacro.h"
 #endif
 
 #ifdef GCC_PPC440
-	#include "../../Source/portable/GCC/PPC440_Xilinx/portmacro.h"
+	#include "../../FreeRTOS/portable/GCC/PPC440_Xilinx/portmacro.h"
 #endif
 
 #ifdef _16FX_SOFTUNE
-	#include "..\..\Source\portable\Softune\MB96340\portmacro.h"
+	#include "..\..\FreeRTOS\portable\Softune\MB96340\portmacro.h"
 #endif
 
 #ifdef BCC_INDUSTRIAL_PC_PORT
@@ -248,31 +248,31 @@ projects should not use them. */
 
 
 #ifdef __IAR_V850ES_Fx3__
-	#include "../../Source/portable/IAR/V850ES/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/V850ES/portmacro.h"
 #endif
 
 #ifdef __IAR_V850ES_Jx3__
-	#include "../../Source/portable/IAR/V850ES/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/V850ES/portmacro.h"
 #endif
 
 #ifdef __IAR_V850ES_Jx3_L__
-	#include "../../Source/portable/IAR/V850ES/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/V850ES/portmacro.h"
 #endif
 
 #ifdef __IAR_V850ES_Jx2__
-	#include "../../Source/portable/IAR/V850ES/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/V850ES/portmacro.h"
 #endif
 
 #ifdef __IAR_V850ES_Hx2__
-	#include "../../Source/portable/IAR/V850ES/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/V850ES/portmacro.h"
 #endif
 
 #ifdef __IAR_78K0R_Kx3__
-	#include "../../Source/portable/IAR/78K0R/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/78K0R/portmacro.h"
 #endif
 
 #ifdef __IAR_78K0R_Kx3L__
-	#include "../../Source/portable/IAR/78K0R/portmacro.h"
+	#include "../../FreeRTOS/portable/IAR/78K0R/portmacro.h"
 #endif
 
 #endif /* DEPRECATED_DEFINITIONS_H */

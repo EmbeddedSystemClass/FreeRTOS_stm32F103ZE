@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>RVDS_ARMCM3_LM3S102</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORTEX_STM32F103_Keil;..\Common\include;..\Source\include;.\STM32F10xFWLib\inc;.\serial;.\Include</IncludePath>
+              <IncludePath>..\uart_cli;..\STM32F10xFWLib\inc;..\Common\include;..\FreeRTOS\include;.\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -409,11 +409,6 @@
           <GroupName>System</GroupName>
           <Files>
             <File>
-              <FileName>STM32F10x.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\STM32F10x.s</FilePath>
-            </File>
-            <File>
               <FileName>lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Common\drivers\ST\STM32F10xFWLib\src\lcd.c</FilePath>
@@ -426,73 +421,48 @@
             <File>
               <FileName>stm32f10x_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STM32F10xFWLib\src\stm32f10x_usart.c</FilePath>
+              <FilePath>..\STM32F10xFWLib\src\stm32f10x_usart.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STM32F10xFWLib\src\stm32f10x_gpio.c</FilePath>
+              <FilePath>..\STM32F10xFWLib\src\stm32f10x_gpio.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_lib.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STM32F10xFWLib\src\stm32f10x_lib.c</FilePath>
+              <FilePath>..\STM32F10xFWLib\src\stm32f10x_lib.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_nvic.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STM32F10xFWLib\src\stm32f10x_nvic.c</FilePath>
+              <FilePath>..\STM32F10xFWLib\src\stm32f10x_nvic.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STM32F10xFWLib\src\stm32f10x_rcc.c</FilePath>
+              <FilePath>..\STM32F10xFWLib\src\stm32f10x_rcc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STM32F10xFWLib\src\stm32f10x_spi.c</FilePath>
+              <FilePath>..\STM32F10xFWLib\src\stm32f10x_spi.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_systick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STM32F10xFWLib\src\stm32f10x_systick.c</FilePath>
+              <FilePath>..\STM32F10xFWLib\src\stm32f10x_systick.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\STM32F10xFWLib\src\stm32f10x_tim.c</FilePath>
+              <FilePath>..\STM32F10xFWLib\src\stm32f10x_tim.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Demo Files</GroupName>
+          <GroupName>Common</GroupName>
           <Files>
-            <File>
-              <FileName>ParTest.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ParTest\ParTest.c</FilePath>
-            </File>
-            <File>
-              <FileName>serial.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\serial\serial.c</FilePath>
-            </File>
-            <File>
-              <FileName>timertest.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\timertest.c</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\spi_flash.c</FilePath>
-            </File>
             <File>
               <FileName>semtest.c</FileName>
               <FileType>1</FileType>
@@ -502,6 +472,49 @@
               <FileName>BlockQ.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Common\Minimal\BlockQ.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
             </File>
             <File>
               <FileName>blocktim.c</FileName>
@@ -517,6 +530,49 @@
               <FileName>death.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Common\Minimal\death.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
             </File>
             <File>
               <FileName>flash.c</FileName>
@@ -532,36 +588,84 @@
               <FileName>PollQ.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Common\Minimal\PollQ.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>1</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>FreeRTOS files</GroupName>
+          <GroupName>FreeRTOS</GroupName>
           <Files>
             <File>
               <FileName>tasks.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Source\tasks.c</FilePath>
+              <FilePath>..\FreeRTOS\tasks.c</FilePath>
             </File>
             <File>
               <FileName>list.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Source\list.c</FilePath>
+              <FilePath>..\FreeRTOS\list.c</FilePath>
             </File>
             <File>
               <FileName>queue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Source\queue.c</FilePath>
+              <FilePath>..\FreeRTOS\queue.c</FilePath>
             </File>
             <File>
               <FileName>port.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Source\portable\RVDS\ARM_CM3\port.c</FilePath>
+              <FilePath>..\FreeRTOS\portable\RVDS\ARM_CM3\port.c</FilePath>
             </File>
             <File>
               <FileName>heap_2.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Source\portable\MemMang\heap_2.c</FilePath>
+              <FilePath>..\FreeRTOS\portable\MemMang\heap_2.c</FilePath>
+            </File>
+            <File>
+              <FileName>FreeRTOSConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FreeRTOSConfig.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -571,12 +675,12 @@
             <File>
               <FileName>CLI-commands.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\CLI-commands.c</FilePath>
+              <FilePath>.\src\CLI-commands.c</FilePath>
             </File>
             <File>
               <FileName>File-Related-CLI-commands.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\File-Related-CLI-commands.c</FilePath>
+              <FilePath>.\src\File-Related-CLI-commands.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -624,7 +728,7 @@
             <File>
               <FileName>Run-time-stats-utils.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\Run-time-stats-utils.c</FilePath>
+              <FilePath>.\src\Run-time-stats-utils.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -672,17 +776,17 @@
             <File>
               <FileName>Sample-CLI-commands.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\Sample-CLI-commands.c</FilePath>
+              <FilePath>.\src\Sample-CLI-commands.c</FilePath>
             </File>
             <File>
               <FileName>UARTCommandConsole.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\UARTCommandConsole.c</FilePath>
+              <FilePath>.\src\UARTCommandConsole.c</FilePath>
             </File>
             <File>
               <FileName>trcKernelPort.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\trcKernelPort.c</FilePath>
+              <FilePath>.\src\trcKernelPort.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -730,7 +834,7 @@
             <File>
               <FileName>trcSnapshotRecorder.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\trcSnapshotRecorder.c</FilePath>
+              <FilePath>.\src\trcSnapshotRecorder.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -778,7 +882,7 @@
             <File>
               <FileName>trcStreamingRecorder.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\trcStreamingRecorder.c</FilePath>
+              <FilePath>.\src\trcStreamingRecorder.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -826,7 +930,52 @@
             <File>
               <FileName>FreeRTOS_CLI.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\serial\FreeRTOS_CLI.c</FilePath>
+              <FilePath>.\src\FreeRTOS_CLI.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Cmsis</GroupName>
+          <Files>
+            <File>
+              <FileName>STM32F10x.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\STM32F10x.s</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_conf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\stm32f10x_conf.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>App</GroupName>
+          <Files>
+            <File>
+              <FileName>ParTest.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\ParTest.c</FilePath>
+            </File>
+            <File>
+              <FileName>serial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\serial.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\spi_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>timertest.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\timertest.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
             </File>
           </Files>
         </Group>
